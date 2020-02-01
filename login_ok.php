@@ -40,9 +40,38 @@ $Pw = $_POST['Pw'];
         // echo '<br>';
 
         if($row){
-            echo "success";
+            // $object = new result;
+            // $object->success = true;
+            // $object->loginUserId = $Id;
+            // $object->name = $row['Name'];
+            // $object->img = $row['Img'];
+
+            // class result{
+            //     public $success, $loginUserId, $name, $img;
+            // }
+            
+            $result = array(
+                'success'=>true,
+                'loginUserId'=>$Id,
+                'name'=>$row['Name'],
+                'img'=>$row['Img']
+              );
+
+            // $result['success'] = true;
+            // $result['loginUserId'] = $Id;
+            // $result['name'] = $row['Name'];
+            // $result['img'] = $row['Img'];
+
+            echo json_encode($result);
+            // $result['success'] = true;
+            // $result['data'] = {
+            //     'loginUserId' : $Id,
+            //     'name' : $row['Name'],
+            //     'img' : $row['Img']
+            // };
+            //echo "success";
         }else{
-            echo "fail";
+            //echo "fail";
         }
         //echo $select_data['UserId'];
         //echo "hello";

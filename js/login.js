@@ -12,14 +12,16 @@ $(document).ready(function(){
             type : "POST",
             url : action,
             data : form_data,
-            success : function(response){
-                if(response == 'success'){
-                    $("#message").html("<p class='success'>로그인 성공</p>");
+            success : function(result){
+                var data = result;
+                if(data){
+                    console.log(result);
+                    $("#message").html("<p class='success'>로그인 성공</p><a href='./board_list.php'>확인</a>");
                     $("#loginform").slideUp('slow');
+                    return;
                 }
                 else{
                     $("#message").html("<p class='error'>아이디 또는 비밀번호가 잘못되었습니다.</p>")
-                    console.log(response)
                 }
             }
         });
