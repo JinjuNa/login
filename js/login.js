@@ -7,7 +7,7 @@ $(document).ready(function(){
             is_ajax : 1
             //is_ajax의 의미
         };
-        alert(form_data.Pw);
+
         $.ajax({
             type : "POST",
             url : action,
